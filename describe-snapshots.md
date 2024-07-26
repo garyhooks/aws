@@ -9,7 +9,11 @@ The following will search for workstations with a Tagged Name of *Forensics*
 The response will include two values, SnapshotId and Tags (Value)
 
 ```bash
-aws ec2 describe-snapshots --region ap-northeast-1 --filters Name=tag:Name,Values=*Forensics* --query "Snapshots[*].[SnapshotId,Tags[0].Value]" --output text
+aws ec2 describe-snapshots
+  --region ap-northeast-1
+  --filters Name=tag:Name,Values=*Forensics*
+  --query "Snapshots[*].[SnapshotId,Tags[0].Value]"
+  --output text
 ```
 
 You can also output as --table for better presentation
