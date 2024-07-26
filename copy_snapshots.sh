@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Copy snapshots from one region to another by using a list of snapshot IDs 
 # Use the following to get the script ids into a file:
-# aws ec2 describe-snapshots --region ap-northeast-1 --filters Name=tag:Name,Values=*Forensics* --query "Snapshots[*].[SnapshotId,Tags[0].Value]" --output text
+# aws ec2 describe-snapshots --region ap-northeast-1 --filters Name=tag:Name,Values=*Forensics* --query "Snapshots[*].[SnapshotId,Tags[0].Value]" --output text > snapshots.txt
 
 while read -r line; do
   
